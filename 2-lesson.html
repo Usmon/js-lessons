@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Var,Let,Const, Functions</title>
+</head>
+<body>
+<script>
+    {
+        var a = 5;
+
+        // function myFunc()
+        // {
+        //     a = 55;
+        //     console.log(a);
+        // }
+
+        // myFunc();
+
+        // console.log(a);
+
+        let my_let = 79;
+        
+        // function myLet()
+        // {
+        //     let my_let = 515;
+        //     console.log(my_let);
+        // }
+
+        // myLet();
+        // console.log(my_let);
+
+        //var vs let and const 
+        let g = 6;
+        const c = 10;
+        
+        // c = 120;
+        
+        // console.log(c);
+    }   
+
+    function sayHello(name)
+    {
+        return 'Hello '+name;
+    }
+
+    function add(a, b)
+    {
+        let y = a+b;
+        
+        return y;
+    }
+
+    function printArray(array_list)
+    {
+
+        let len = array_list.length;
+        for (let i = 0; i < len; i++) 
+        {
+            console.log(array_list[i]);
+        }
+    }
+
+    var my_array = [
+        56,
+        67,
+        78,
+        90
+    ]; 
+
+    // printArray(my_array);
+    // printArray([4,6,7,8,9]);
+
+    // console.log(sayHello('John'));
+    // console.log(sayHello('Natali'));
+
+    // alert('Salom dunyo');
+    //var val = prompt('Savol beriladi javob olinadi');
+    //console.log(val);
+
+    // var conf = confirm('Siz saytga kirishni xoxlaysizmi?');
+    // console.log(conf);
+
+    //Parser function
+    var x = parseInt('45');
+    var y = parseFloat('56.7');
+</script>
+</body>
+</html>

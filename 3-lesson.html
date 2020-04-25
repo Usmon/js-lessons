@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-lesson Create class (OOP)</title>
+</head>
+<body>
+    <script>
+        function Employee(first_name, last_name, age, type) {
+            this.name = {
+                first: first_name,
+                last: last_name,
+                full: first_name + ' ' + last_name
+            };
+
+            this.age = age;
+            this.type = type;
+
+            this.sayHello = function() {
+                alert('Hello '+this.name.full);
+            };
+        }
+
+        var person1 = new Employee('John', 'Doe', 29, 'Developer');
+        person1.sayHello();
+
+        var person2 = new Employee('Lisa', 'Kan', 30, 'Designer');
+        person2.sayHello();
+    </script>
+</body>
+</html>

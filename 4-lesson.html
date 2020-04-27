@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeOut, seInterval, DOM, Selector</title>
+    <style>
+        div#messageBox {
+            background: green;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            padding-top: 20%;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left:0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align:center;">
+        <h3 id="my-title">My site</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, dolor eum consequatur sed vitae, ipsam debitis asperiores qui consequuntur, distinctio eos! Consequuntur, unde?</p>
+    </div>
+
+    <form>
+        <input id="aValue" type="number"> + <input id="bValue" type="number"> 
+        <button onclick="calc()" type="button">Calc</button>
+    </form>
+
+    <div id="messageBox">
+        Text test
+    </div>
+<script>
+    //parseInt and parseFloat 
+
+    //SetInterval and setTimeOut
+    setTimeout(function(){
+        //console.log('Hello after 3 secund');
+    }, 3000); //3s
+
+    setInterval(function() {
+        //console.log('Hello');
+    }, 3000); 
+
+    //DOM => Document Object Model
+    var myTitle = document.getElementById('my-title');
+    myTitle.style.color = 'red';
+
+    function calc() {
+        var a = document.getElementById('aValue').value;
+        var b = document.getElementById('bValue').value;
+        var result = parseInt(a) + parseInt(b);
+        
+        messageBox(result);
+    }
+
+    function messageBox(text) {
+        var box = document.getElementById('messageBox');
+
+        box.innerText = text;
+        box.style.display = 'block';
+
+        setTimeout(function () {
+            box.style.display = 'none';
+        }, 4000);
+    }
+
+</script>
+</body>
+</html>

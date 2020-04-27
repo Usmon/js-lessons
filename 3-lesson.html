@@ -22,11 +22,37 @@
             };
         }
 
-        var person1 = new Employee('John', 'Doe', 29, 'Developer');
-        person1.sayHello();
+        // var person1 = new Employee('John', 'Doe', 29, 'Developer');
+        // person1.sayHello();
 
-        var person2 = new Employee('Lisa', 'Kan', 30, 'Designer');
-        person2.sayHello();
+        // var person2 = new Employee('Lisa', 'Kan', 30, 'Designer');
+        // person2.sayHello();
+
+        //Task
+        function Student(full_name, b_day, phone) {
+            this.name = full_name;
+            this.birthday = b_day;
+            this.phone = phone;
+        }
+
+        function Group(name, students) {
+            this.name = name;
+            this.students = students;
+
+            this.print = function() {
+                console.table(this.students);
+            }
+        }
+
+        var students = [
+            new Student('John Doe', '2000-04-29', '+9987433434'),
+            new Student('John Michel', '2000-12-30', '+998743324'),
+            new Student('Emma Stoun', '1999-04-29', '+9987421434'),
+        ];
+
+        var group = new Group('914-13', students);
+        group.print();
+        console.log(group.name);
     </script>
 </body>
 </html>

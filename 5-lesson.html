@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM, Date, document.write</title>
+</head>
+<body>
+    
+    <div id="content" class="main-container" data-id="34">
+        <script>
+            //document.write('This from JS');
+        </script>
+    </div>
+    <button onclick="drawRow()">Add row</button>
+    <table border="1" width="100%">
+        <thead>
+            <th>Name</th>
+            <th>Age</th>
+        </thead>
+        <tbody id="t-body">
+
+        </tbody>
+    </table>
+
+    <noscript>
+        Sizda JavaScript ishlamayapti uni yoqing! Aks holsa sayt to'liq ishlamaydi!
+    </noscript>
+
+    <script>
+        var attr = document.getElementById('content').getAttribute('data-id');
+        // console.log(attr);
+        var date = new Date();
+        // document.write( date.getDay() );
+
+        function drawRow() {
+            var tBody = document.getElementById('t-body');
+
+            var tr = document.createElement('tr');
+            var td_name = document.createElement('td');
+            var td_age  = document.createElement('td');
+            
+            td_name.innerText = 'John Doe';
+            td_age.innerText  = 23;
+
+            tr.append(td_name);
+            tr.append(td_age);
+
+            tBody.append(tr);
+        }
+    </script>
+</body>
+</html>

@@ -31,6 +31,10 @@
         <button onclick="calc()" type="button">Calc</button>
     </form>
 
+    <ol id="students-list">
+        
+    </ol>
+
     <div id="messageBox">
         Text test
     </div>
@@ -67,6 +71,23 @@
         setTimeout(function () {
             box.style.display = 'none';
         }, 4000);
+    }
+
+    //Task
+    var students = [
+        {name: 'John', age: 22},
+        {name: 'Peter', age: 23},
+        {name: 'Kim', age: 21},
+        {name: 'Alex', age: 20},
+    ];
+
+    var list_content = document.getElementById('students-list');
+
+    for (var i = 0; i < students.length; i++) {
+        var full = students[i].name+'('+students[i].age+')';
+        var li = document.createElement('li');
+        li.innerText = full;
+        list_content.append(li);
     }
 
 </script>

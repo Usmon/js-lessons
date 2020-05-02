@@ -17,6 +17,7 @@
         <thead>
             <th>Name</th>
             <th>Age</th>
+            <th width="100">Action</th>
         </thead>
         <tbody id="t-body">
 
@@ -32,22 +33,57 @@
         // console.log(attr);
         var date = new Date();
         // document.write( date.getDay() );
-
+        var index = 0;
         function drawRow() {
             var tBody = document.getElementById('t-body');
+
+            var iden = 'row'+ (++index);
 
             var tr = document.createElement('tr');
             var td_name = document.createElement('td');
             var td_age  = document.createElement('td');
-            
+            var td_action = document.createElement('td');
+            var btn = document.createElement('button');
+
+            btn.setAttribute('onclick', 'deleteRow("'+iden+'")')
+            btn.innerText = 'Delete'
+
+            tr.setAttribute('id', iden);
+
             td_name.innerText = 'John Doe';
-            td_age.innerText  = 23;
+            td_age.innerText  = index;
+            td_action.append(btn);
 
             tr.append(td_name);
             tr.append(td_age);
+            tr.append(td_action);
 
             tBody.append(tr);
         }
+
+        function deleteRow(id) 
+        {
+            document.getElementById(id).remove();
+        }
+
+        //Task 1
+        var happy_days = [
+            '2020-05-02',
+            '2020-01-01',
+            '2020-05-03'
+        ];
+        var today = new Date();
+
+        for (day of happy_days) {
+            var check_date = new Date(day);
+            if (check_date.getMonth() == today.getMonth() && check_date.getDay() == today.getDay() ) {
+                //alert('Bugun bayram!');
+            }
+               
+        }
+
+        //Task 2
+
     </script>
 </body>
 </html>

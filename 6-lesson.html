@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keypress, keydown, keyup</title>
 </head>
-<body>
+<body onkeypress="hotKey(event)">
+    <button onclick="print()" id="printMe">Print</button>
     <input onkeypress="press(event)" type="text" id="action_input">
     <span id="text"></span>
     
@@ -17,6 +18,19 @@
             document.getElementById('text').innerText += event.key;
         }
 
+        function print()
+        {
+            alert('Print window from button');
+        } 
+
+        //Task HotKey
+        function hotKey(e) 
+        {
+            //For print
+            if (e.charCode == 16 && e.ctrlKey == true) {
+                print();
+            }
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie, LocalStorage, SessionStorage</title>
+</head>
+<body>
+    <script>
+        //Cookie
+        document.cookie = "set_key=value / expire: 2020-05-05 23:00"; // expire: 2020-05-05 23:00
+        
+        localStorage.setItem('user_name', "JohnDoe");
+        localStorage.getItem('user_name');
+
+        sessionStorage.setItem('my_name', 'Michel');
+        sessionStorage.getItem('my_name');
+    </script>
+</body>
+</html>

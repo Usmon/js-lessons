@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery: selectors</title>
+</head>
+<body>
+    <div id="my-content"></div>
+
+    <div class="student"></div>
+    <div class="student"></div>
+    <div class="student"></div>
+    <div class="student"></div>
+
+    <form action="">
+        <input name="user_name" type="text"> 
+        <input id="age" type="text">
+        <input class="my-class object-class show-class select-class" type="text">
+        <button type="button">Get Value</button>
+    </form>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+
+    <script>
+        //document.getElementById('my-content').innerText = 'salom dunyo JS';
+        $('#my-content').text('salom dunyo jQ');
+        $('.student').text('John Doe').css({background: 'red'});
+        $('#my-content').html('<h1>Salom dunyo!</h1>');
+
+        // $('#my-content').slide(3000);
+        $('#my-content').hide(); //.show();
+        $('#my-content').slideDown(6000); //.fadeIn()
+
+        $('button').click(function(){
+            var val = $('input[name=user_name]').val();
+            var val2 = $('input#age').val();
+            var val3 = $('input.select-class').val();
+            console.log(val, ' ', val2, ' ', val3);
+            $('input[name=user_name]').val('John Doe');
+        });
+
+    </script>
+</body>
+</html>

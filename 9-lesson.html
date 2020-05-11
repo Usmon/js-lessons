@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find and Closest: Selectors for childrens and parents</title>
+</head>
+<body>
+    <div class="parent" style="background: red;">
+        <div class="child">
+            <div class="sub-child">
+                <h3>Title for test</h3>
+            </div>
+        </div>
+    </div>
+
+    <ul id="list">
+        <li>Rabbit</li>
+        <li>Dog</li>
+        <li>Cat</li>
+        <li>Bird</li>
+    </ul>
+
+    <ul id="students">
+        <li data-id="78">Jahongir</li>
+        <li data-id="72">Akmal</li>
+        <li data-id="34">Nodir</li>
+    </ul>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        // $('.parent > .child > .sub-child > h3').text('Changed'); //Static selctor
+        // $('.parent').find('.child').html('Removed h3 and set new text'); //Find Method -> Ichkaridan qidiradi
+        console.log ($('.sub-child').closest('.parent').attr('style') ); //Closest mehtod -> Tashqaridan qidiradi
+        
+        //.each method
+        //for DOM elemtents
+        $('ul > li').each(function(index, value){ //PHP: foreach($list as $index => $value)
+            console.log(index," => " ,$(value).text());
+        });
+
+        var students = [
+            'Denny',
+            'Mock',
+            'John',
+            'Emma'
+        ];
+
+        $.each(students, function(index, value){
+            console.log(index, ' => ',value);
+        });
+
+        //.data method
+        $('#students > li').click(function(){
+            var id = $(this).data('id');
+            console.log( id );
+        });
+    </script>
+</body>
+</html>

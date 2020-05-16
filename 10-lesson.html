@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.get(), .post(), .ajax() - AJAX</title>
+</head>
+<body>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        // $.get('backend/calc.php', {val1: 34, val2: 21}, function(response){
+        //     console.log(response);
+        // });
+        // $.post('backend/calc.php', {my_val: 56}, function(response){
+        //     console.log(response);
+        // });
+        
+        $.ajax({
+            url: 'backend/calc.php',
+            type: 'POST', //or POST
+            data: {my_val: 9}, //{val1: 101, val2: 109},
+            dataType: 'text', //JSON or TEXT or HTML
+            success: function(response) {
+                console.log(response);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX - JSON response</title>
+</head>
+<body>
+    <button id="get_groups">Group list</button>
+    <div id="groups"></div>
+    <table border="1" width="100%">
+        <thead>
+            <th>Group</th>
+            <th>Name</th>
+            <th>Phone</th>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+    </table>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script> 
+        $('#get_groups').click(function() {
+            $.ajax({
+                url: 'backend/univer.php',
+                type: 'GET',
+                data: {group_list: 1},
+                dataType: 'JSON',
+                success: function (response) {
+                    $('#groups').html('');
+                    $.each(response, function(index, value) {
+                        var link = '<a href="#" data-group="'+value+'">'+value+'</a> | ';
+                        $('#groups').append(link);
+                    })
+                }
+            });
+        });
+
+        $('body').on('click', '#groups a', function() {
+            var group_name = $(this).data('group');
+            $.ajax({
+                url: 'backend/univer.php',
+                type: 'GET',
+                data: {group_name: group_name}, //'group_name=32-45&teacher=John' <==> {group_name: 32-45, teacher: 'John'}
+                dataType: 'JSON',
+                success: function(response) {
+                    $('table #table-body').html(' ');
+                    $.each(response, function(index, student){
+                        var tr = '<tr><td>'+student.group+'</td><td>'
+                                +student.name+'</td><td>'
+                                +student.phone+'</td></tr>';
+                        $('table #table-body').append(tr);
+                    });
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
